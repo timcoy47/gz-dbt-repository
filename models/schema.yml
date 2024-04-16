@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    database: amazing-insight-419011
+    schema: gz_raw_data
+    tables:
+      - name: raw_gz_sales
+      - name: raw_gz_product
+      - name: raw_ship
