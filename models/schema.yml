@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    database: amazing-insight-419011
+    schema: gz_raw_data
+    description: "Dataset holds raw sales, product, and shipping data."
+    tables:
+      - name: raw_gz_sales
+        description: "Contains transaction details."
+        columns:
+          - name: date_date
+            description: "Transaction date."
+            data_type: "date"
+          - name: orders_id
+            description: "Order identifier."
+            data_type: "integer"
+          - name: pdt_id
+            description: "Product identifier."
+            data_type: "integer"
+          - name: revenue
+            description: "Total revenue from the transaction."
+            data_type: "numeric"
+          - name: quantity
+            description: "Quantity of product sold."
+            data_type: "integer"
+      - name: raw_gz_product
+        description: "Information about products."
+        columns:
+          - name: products_id
+            description: "Product identifier."
+            data_type: "integer"
+          - name: purchSE_PRICE
+            description: "Purchase price."
+            data_type: "numeric"
+      - name: raw_ship
+        description: "Shipping details for orders."
+        columns:
+          - name: orders_id
+            description: "Order identifier."
+            data_type: "integer"
+          - name: shipping_fee
+            description: "Shipping fee."
+            data_type: "numeric"
+          - name: log_cost
+            description: "Logistical cost."
+            data_type: "numeric"
+          - name: ship_cost
+            description: "Actual shipping cost."
+            data_type: "numeric"
