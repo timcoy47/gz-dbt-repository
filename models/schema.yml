@@ -4,47 +4,165 @@ sources:
   - name: gz_raw_data
     database: amazing-insight-419011
     schema: gz_raw_data
-    description: "Dataset holds raw sales, product, and shipping data."
+    description: "Holds raw data related to sales, products, and shipping."
     tables:
       - name: raw_gz_sales
-        description: "Contains transaction details."
+        description: "Details of transactions."
         columns:
           - name: date_date
-            description: "Transaction date."
+            description: "Date of transaction."
             data_type: "date"
+            tests:
+              - not_null
           - name: orders_id
-            description: "Order identifier."
+            description: "Identifier for orders."
             data_type: "integer"
-          - name: pdt_id
-            description: "Product identifier."
+            tests:
+              - not_null
+          - name: product_id
+            description: "Identifier for products."
             data_type: "integer"
           - name: revenue
-            description: "Total revenue from the transaction."
+            description: "Revenue from transaction."
             data_type: "numeric"
           - name: quantity
-            description: "Quantity of product sold."
+            description: "Quantity of products sold."
             data_type: "integer"
       - name: raw_gz_product
-        description: "Information about products."
+        description: "Product information."
         columns:
           - name: products_id
-            description: "Product identifier."
+            description: "Identifier for products."
             data_type: "integer"
-          - name: purchSE_PRICE
-            description: "Purchase price."
+          - name: purchase_price
+            description: "Purchase price of products."
             data_type: "numeric"
       - name: raw_ship
-        description: "Shipping details for orders."
+        description: "Shipping information for orders."
         columns:
           - name: orders_id
-            description: "Order identifier."
+            description: "Identifier for orders."
             data_type: "integer"
           - name: shipping_fee
-            description: "Shipping fee."
+            description: "Fee for shipping."
             data_type: "numeric"
           - name: log_cost
-            description: "Logistical cost."
+            description: "Cost of logistics."
             data_type: "numeric"
           - name: ship_cost
-            description: "Actual shipping cost."
+            description: "Actual cost of shipping."
             data_type: "numeric"
+      - name: raw_gz_adwords
+        description: "Google AdWords campaign data."
+        columns:
+          - name: date_date
+            description: "Ad display date."
+            data_type: "date"
+            tests:
+              - not_null
+          - name: paid_source
+            description: "Ad payment platform."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: campaign_key
+            description: "Campaign identifier."
+            data_type: "integer"
+            tests:
+              - not_null
+          - name: camPGN_name
+            description: "Campaign name."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: ads_cost
+            description: "Cost of ads."
+            data_type: "numeric"
+            tests:
+              - not_null
+          - name: impression
+            description: "Ad impressions."
+            data_type: "numeric"
+            tests:
+              - not_null
+          - name: click
+            description: "Ad clicks."
+            data_type: "numeric"
+            tests:
+              - not_null
+      - name: raw_gz_criteo
+        description: "Criteo advertising data."
+        columns:
+          - name: date_date
+            description: "Ad display date."
+            data_type: "date"
+            tests:
+              - not_null
+          - name: paid_source
+            description: "Ad payment platform."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: campaign_key
+            description: "Campaign identifier."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: camPGN_name
+            description: "Campaign name."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: ads_cost
+            description: "Cost of ads."
+            data_type: "numeric"
+            tests:
+              - not_null
+          - name: impression
+            description: "Ad impressions."
+            data_type: "numeric"
+            tests:
+              - not_null
+          - name: click
+            description: "Ad clicks."
+            data_type: "numeric"
+            tests:
+              - not_null
+      - name: raw_gz_facebook
+        description: "Facebook advertising data."
+        columns:
+          - name: date_date
+            description: "Ad display date."
+            data_type: "date"
+            tests:
+              - not_null
+          - name: paid_source
+            description: "Ad payment platform."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: campaign_key
+            description: "Campaign identifier."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: camPGN_name
+            description: "Campaign name."
+            data_type: "string"
+            tests:
+              - not_null
+          - name: ads_cost
+            description: "Cost of ads."
+            data_type: "numeric"
+            tests:
+              - not_null
+          - name: impression
+            description: "Ad impressions."
+            data_type: "numeric"
+            tests:
+              - not_null
+          - name: click
+            description: "Ad clicks."
+            data_type: "numeric"
+            tests:
+              - not_null
