@@ -166,3 +166,33 @@ sources:
             data_type: "numeric"
             tests:
               - not_null
+
+models:
+  - name: int_campaigns_day
+    description: >
+      This model aggregates advertising data from multiple sources (Google AdWords, Criteo, and Facebook).
+      It provides a daily summary of ad costs, impressions, and clicks. It is useful for tracking
+      the performance of marketing campaigns across different platforms on a day-to-day basis.
+
+    columns:
+      - name: date_date
+        description: The date of the data record, representing the day for which the advertising data was aggregated.
+        tests:
+          - not_null
+          - unique
+
+      - name: ads_cost
+        description: Total advertising cost accumulated on this date across all platforms.
+        tests:
+          - not_null
+
+      - name: impression
+        description: Total number of ad impressions on this date across all platforms.
+        tests:
+          - not_null
+
+      - name: click
+        description: Total number of ad clicks on this date across all platforms.
+        tests:
+          - not_null
+
